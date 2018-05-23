@@ -1,6 +1,7 @@
 package login;
 
 import generalFrame.activeEmployees;
+import generalFrame.generalFrame;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -32,7 +33,9 @@ import temp.simpleFrame;
 
 public class loginFrame extends JFrame {
 	private static int someOpen = 0;
+	private static int check = 0;
 	public loginFrame(int x,int y,int weight,int height){
+		generalFrame.disable();
 		someOpen++;
 		Panel pane = new Panel();
 		JPasswordField field = new JPasswordField();
@@ -161,14 +164,15 @@ public class loginFrame extends JFrame {
 					Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tonydb?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","1234");
 					Statement myStmt = myConn.createStatement();
 					ResultSet myRs = myStmt.executeQuery("select * from employee");
-					int check = 0;
 					while (myRs.next()) 
 						if (Long.parseLong(myRs.getString("ID")) == ID)
 							check = 1;
 					if (check == 1){
 						activeEmployees.Connect(ID);
 						someOpen = 0;
+						generalFrame.enable();
 						setVisible(false);
+						check = 0;
 					}
 					else
 						JOptionPane.showMessageDialog(null, "שמואל");
@@ -188,11 +192,6 @@ public class loginFrame extends JFrame {
 				someOpen = 0;
 				dispose();
 			}
-//			public void keyPressed(KeyEvent e) {
-//			    if (e.getKeyCode()==KeyEvent.VK_ENTER){
-//			    }
-//
-//			}
 		});
 		
 		pane.add(exit);

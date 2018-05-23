@@ -6,6 +6,8 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
 
@@ -29,6 +31,16 @@ public class Contents extends JFrame {
 		JLabel background2 = new JLabel();
 		background2.setIcon(new ImageIcon(this.getClass().getResource("/images/background2.png")));
 		background2.setBounds(new Rectangle(new Point(320,260), new Dimension(737,460)));
+		Button exit = new Button("/images/generalButtons/generalExit.png","/images/generalButtons/generalExit2.png");
+		exit.setBounds(new Rectangle(new Point(1313, -2),exit.getPreferredSize()));
+		exit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				generalFrame.unVisible();
+			}
+		});
+		pane.add(exit);
 		pane.add(background2);
 		pane.add(HutLogo);
 		return pane;

@@ -13,31 +13,28 @@ import temp.Panel;
 import temp.copyRightPanel;
 
 
-public class generalFrame extends Frame {
+public class generalFrame {
+	private static Frame frame;
 	public generalFrame(){
+		frame = new Frame();
 		Component contents = new Contents().createComponents();
 		Component generalButtons = new generalButtons().createComponents();
 		Component activeEmployees = new activeEmployees().createComponents();
-		Panel pane = new Panel();
-		Button exit = new Button("/images/generalButtons/generalExit.png","/images/generalButtons/generalExit2.png");
-		exit.setBounds(new Rectangle(new Point(1313, -2),exit.getPreferredSize()));
-		exit.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
-			}
-		});
-		pane.add(exit);
-		addComponent(contents);
-		addComponent(generalButtons);
-		addComponent(pane);
-		addComponent(activeEmployees);
+		frame.addComponent(contents);
+		frame.addComponent(generalButtons);
+		frame.addComponent(activeEmployees);
 
+	}
+	public static void unVisible(){
+		frame.setVisible(false);
 	}
 	public static void main(String[] args) {
 		generalFrame frame = new generalFrame();
 	}
-	
+	public static void disable(){
+		frame.setEnabled(false);
+	}
+	public static void enable(){
+		frame.setEnabled(true);
+	}
 }

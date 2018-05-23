@@ -46,6 +46,14 @@ public class generalButtons {
 		Button ShipOrdersButton = new Button("/images/generalButtons/ShipOrders.png","/images/generalButtons/ShipOrders2.png");
 		Button PlaceOrdersButton = new Button("/images/generalButtons/PlaceOrders.png","/images/generalButtons/PlaceOrders2.png");
 		Button SearchOrderButton = new Button("/images/generalButtons/SearchOrder.png","/images/generalButtons/SearchOrder2.png");
+		SearchOrderButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		Button OpenChashButton = new Button("/images/generalButtons/OpenCash.png","/images/generalButtons/OpenCash2.png");
 		OpenChashButton.addActionListener(new ActionListener() {
 			
