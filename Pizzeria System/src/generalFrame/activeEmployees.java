@@ -32,7 +32,7 @@ public class activeEmployees {
 	private Connection myConn;
 	private Statement myStmt = null;
 	private ResultSet myRs = null;
-	private String[] columnNames = {"שם פרטי","שם משפחה","תפקיד"};
+	private String[] columnNames = {"שם פרטי","שם משפחה","תעודת זהות"};
 	private Object[][] data;
 //	List<Label> activeEmployees = new ArrayList<Label>();
 	public Component createComponents(){
