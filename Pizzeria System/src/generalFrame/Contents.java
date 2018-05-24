@@ -33,7 +33,7 @@ public class Contents extends JFrame {
         labelImage HutLogo = new labelImage("/images/Pizza_Hut.png");
 		HutLogo.setBounds(new Rectangle(new Point(width/2-HutLogo.getWidth()/2,0), HutLogo.getPreferredSize()));
 		labelImage background2 = new labelImage("/images/background2.png");
-		background2.setBounds(new Rectangle(new Point(width/2-background2.getWidth()/2,260), background2.getPreferredSize()));
+		background2.setBounds(new Rectangle(new Point(width/2-background2.getWidth()/2,height/3), background2.getPreferredSize()));
 		Button exit = new Button("/images/generalButtons/generalExit.png","/images/generalButtons/generalExit2.png");
 		exit.setBounds(new Rectangle(new Point(width-exit.getWidth(), 0),exit.getPreferredSize()));
 		exit.addActionListener(new ActionListener() {

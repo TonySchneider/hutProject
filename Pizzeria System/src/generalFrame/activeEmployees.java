@@ -6,6 +6,7 @@ import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,8 +21,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -36,6 +39,9 @@ public class activeEmployees {
 	private Object[][] data;
 //	List<Label> activeEmployees = new ArrayList<Label>();
 	public Component createComponents(){
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int width = (int)screenSize.getWidth();
+		int height = (int)screenSize.getHeight();
 		Panel pane = new Panel();
 		JTable table = new JTable();
 		DefaultTableModel model = new DefaultTableModel(data, columnNames) {
@@ -77,7 +83,7 @@ public class activeEmployees {
 		table.setModel(model);
 		table.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		table.setFillsViewportHeight(true);
-		table.setBounds(new Rectangle(new Point(730,300),new Dimension(310,400)));
+		table.setBounds(new Rectangle(new Point(width/2+40,height/3+40),new Dimension(310,400)));
 //		table.setOpaque(false);
 		table.getTableHeader().setBackground(new Color(0,0,0,0.6f));
 		table.getTableHeader().setForeground(Color.white);
