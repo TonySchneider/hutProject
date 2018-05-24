@@ -29,12 +29,15 @@ import javax.swing.JPasswordField;
 import temp.BackGroundPanel;
 import temp.Button;
 import temp.Panel;
+import temp.backGroundSimplePanel;
 import temp.simpleFrame;
 
 public class loginFrame extends JFrame {
 	private static int someOpen = 0;
 	private static int check = 0;
 	public loginFrame(int x,int y,int weight,int height){
+		backGroundSimplePanel background = new backGroundSimplePanel(new BorderLayout(),"/images/keyBoardNumber.png");
+		setContentPane(background);
 		generalFrame.disable();
 		someOpen++;
 		Panel pane = new Panel();
@@ -195,8 +198,6 @@ public class loginFrame extends JFrame {
 		});
 		
 		pane.add(exit);
-		BackGroundPanel background = new BackGroundPanel(new BorderLayout(),"/images/keyBoardNumber.png");
-		setContentPane(background);
 		
 		pane.add(submit);
 		pane.add(field);
