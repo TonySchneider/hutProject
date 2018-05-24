@@ -1,6 +1,7 @@
 package backDoorFrame;
 import generalFrame.Contents;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
@@ -10,29 +11,36 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import temp.BackGroundPanel;
 import temp.Label;
 import temp.Panel;
 import temp.TextField;
 import temp.simpleFrame;
 
 import java.sql.*;
-public class listOfEmployeesContents {
+public class listOfEmployeesPane extends Panel {
 	private Connection myConn;
 	private Statement myStmt = null;
 	private ResultSet myRs = null;
 	private String[] columnNames = {"מספר עובד","שם פרטי","שם משפחה","תעודת זהות","שעות עבודה","תפקיד"};
 	private Object[][] data;
-	public Component createComponents(){
-		Panel pane = new Panel();
+	public listOfEmployeesPane(){
+//		setOpaque(true);
+//		JLabel backgroundLists = new JLabel();
+//		backgroundLists.setIcon(new ImageIcon(this.getClass().getResource("/images/backDoorButtons/backgroundLists.png")));
+//		backgroundLists.setBounds(new Rectangle(new Point(300,200), new Dimension(1050,542)));
+//		add(backgroundLists);
 		JTable table = new JTable();
 		DefaultTableModel model = new DefaultTableModel(data, columnNames) {
 		    @Override
@@ -132,11 +140,16 @@ public class listOfEmployeesContents {
 		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
 		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
 		for (int i=0;i<6;i++) table.getColumnModel().getColumn(i).setCellRenderer( centerRenderer );
-		pane.add(title);
-		pane.add(scrollPane);
-		pane.add(addButton);
-		pane.add(removeButton);
-		return pane;
+		add(title);
+		add(scrollPane);
+		add(addButton);
+		add(removeButton);
 	}
-	
+	public void refreshPane(){
+		setVisible(false);
+		setVisible(true);
+	}
+//	public static void disable(){
+//		
+//	}
 }

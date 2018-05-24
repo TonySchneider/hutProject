@@ -1,4 +1,5 @@
 package temp;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.LayoutManager;
@@ -18,13 +19,13 @@ public class BackGroundPanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Image image = new ImageIcon(this.getClass().getResource(imageFile)).getImage();
-		int baslangicX = 0;
-		int baslangicY = 0;
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int width = (int)screenSize.getWidth();
+		int height = (int)screenSize.getHeight();
+//		int bitisX = getSize().width;
+//		int bitisY = getSize().height;
 
-		int bitisX = getSize().width;
-		int bitisY = getSize().height;
-
-		g.drawImage(image, baslangicX, baslangicY, bitisX, bitisY, null);
+		g.drawImage(image, 0, 0, width, height, null);
 	}
 
 }
