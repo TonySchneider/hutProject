@@ -83,7 +83,7 @@ public class activeEmployees {
 		table.setModel(model);
 		table.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		table.setFillsViewportHeight(true);
-		table.setBounds(new Rectangle(new Point(width/2+40,height/3+40),new Dimension(310,400)));
+		table.setBounds(new Rectangle(new Point(width/2+40,height/3+50),new Dimension(310,400)));
 //		table.setOpaque(false);
 		table.getTableHeader().setBackground(new Color(0,0,0,0.6f));
 		table.getTableHeader().setForeground(Color.white);
