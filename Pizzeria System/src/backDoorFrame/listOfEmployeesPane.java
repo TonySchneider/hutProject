@@ -36,6 +36,7 @@ public class listOfEmployeesPane extends Panel {
 	private String[] columnNames = {"מספר עובד","שם פרטי","שם משפחה","תעודת זהות","שעות עבודה","תפקיד"};
 	private Object[][] data;
 	public listOfEmployeesPane(){
+		setPreferredSize(new Dimension(1050,542));
 //		setOpaque(true);
 //		JLabel backgroundLists = new JLabel();
 //		backgroundLists.setIcon(new ImageIcon(this.getClass().getResource("/images/backDoorButtons/backgroundLists.png")));

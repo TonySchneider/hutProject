@@ -177,8 +177,14 @@ public class loginFrame extends JFrame {
 						setVisible(false);
 						check = 0;
 					}
-					else
-						JOptionPane.showMessageDialog(null, "מספר תעודת זהות שגוי.");
+					else{
+//						JOptionPane.showMessageDialog(null, "מספר תעודת זהות שגוי.");
+						JOptionPane optionPane = new JOptionPane();
+						optionPane.setMessage("מספר תעודת זהות שגוי.");
+						JDialog dialog = optionPane.createDialog("שגיאה");
+						dialog.setAlwaysOnTop(true);
+						dialog.setVisible(true);
+					}
 				}catch(Exception e5){
 					JOptionPane.showMessageDialog(null, e5.getMessage());
 				}
@@ -192,6 +198,7 @@ public class loginFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				generalFrame.enable();
 				someOpen = 0;
 				dispose();
 			}
