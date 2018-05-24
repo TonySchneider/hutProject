@@ -1,17 +1,6 @@
 package generalFrame;
 import java.awt.Component;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.Timer;
-
-import temp.Button;
 import temp.Frame;
-import temp.Panel;
-import temp.copyRightPanel;
-
 
 public class generalFrame {
 	private static Frame frame;

@@ -1,5 +1,4 @@
 package backDoorFrame;
-import generalFrame.Contents;
 
 import java.awt.Component;
 import java.awt.ComponentOrientation;
@@ -57,7 +56,7 @@ public class listOfEmployeesContents {
 		JButton addButton = new JButton("הוסף עובד חדש");
 		addButton.setBounds(new Rectangle(new Point(800, 380),new Dimension(130,35)));
 		addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {
             	simpleFrame frame = new simpleFrame(320,200,500,500);
         		String[] roleStrings = { "מנהל", "שליח", "עובד פנים" };
         		Panel pane2 = new Panel();

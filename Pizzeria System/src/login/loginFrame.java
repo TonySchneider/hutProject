@@ -175,7 +175,7 @@ public class loginFrame extends JFrame {
 						check = 0;
 					}
 					else
-						JOptionPane.showMessageDialog(null, "שמואל");
+						JOptionPane.showMessageDialog(null, "מספר תעודת זהות שגוי.");
 				}catch(Exception e5){
 					JOptionPane.showMessageDialog(null, e5.getMessage());
 				}
