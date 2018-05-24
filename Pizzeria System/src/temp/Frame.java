@@ -18,23 +18,21 @@ import javax.swing.Timer;
 
 
 public class Frame extends JFrame {
-		private BackGroundPanel background;
+//		private BackGroundPanel background;
 		public Frame(){
 			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 			setMaximumSize(new Dimension(dim.width,dim.height));
 			setLayout(null);
-	    	background = new BackGroundPanel(new BorderLayout(),"/images/BACKGROUND.png");
+//	    	background = new BackGroundPanel(new BorderLayout(),"/images/BACKGROUND.png");
 //	    	Image image = new ImageIcon(this.getClass().getResource("/images/BACKGROUND.png")).getImage();
 			setIconImage(new ImageIcon(this.getClass().getResource("/images/Ph2016.png")).getImage());
-			setContentPane(background);
+//			setContentPane(background);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setUndecorated(true);
 			pack();
 			setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			setSize(600, 400);
 			setVisible(true);
-			addComponent(new DateAndTime().createComponents());
-			addComponent(new copyRightPanel().createComponents());
 		}
 	public void addComponent(Component contents){
 		revalidate();

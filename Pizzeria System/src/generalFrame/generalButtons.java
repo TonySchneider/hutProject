@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -22,6 +23,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.Timer;
 
+import com.mysql.cj.protocol.Protocol.GetProfilerEventHandlerInstanceFunction;
+
 import orderFrame.orderFrame;
 import login.loginFrame;
 import temp.*;
@@ -31,8 +34,11 @@ public class generalButtons {
 	public Component createComponents() {
 		Panel pane = new Panel();
 		pane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        Point centerPoint = ge.getCenterPoint();
+//		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//        Point centerPoint = ge.getCenterPoint();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int width = (int)screenSize.getWidth();
+		int height = (int)screenSize.getHeight();
 		Button TakeAwayButton = new Button("/images/generalButtons/TakeAwayButton.png","/images/generalButtons/TakeAwayButton2.png");
 		TakeAwayButton.addActionListener(new ActionListener() {
 			
@@ -77,14 +83,14 @@ public class generalButtons {
             	pass.setAlwaysOnTop(true);
             }
         });
-		TakeAwayButton.setBounds(new Rectangle(new Point(centerPoint.x+130, 70),new Dimension(250,150)));
-		TakeAwayPlaceButton.setBounds(new Rectangle(new Point(centerPoint.x+410, 70),new Dimension(250,150)));
-		ShipOrdersButton.setBounds(new Rectangle(new Point(300, 70),new Dimension(250,150)));
-		PlaceOrdersButton.setBounds(new Rectangle(new Point(20, 70),new Dimension(250,150)));
-		LoginButton.setBounds(new Rectangle(new Point(centerPoint.x+410, 280),new Dimension(250,150)));
-		BackDoorButton.setBounds(new Rectangle(new Point(20, 520),new Dimension(250,150)));
-		OpenChashButton.setBounds(new Rectangle(new Point(centerPoint.x+410, 520),new Dimension(250,150)));
-		SearchOrderButton.setBounds(new Rectangle(new Point(20, 280),new Dimension(250,150)));
+		TakeAwayButton.setBounds(new Rectangle(new Point(width-300-TakeAwayButton.getWidth(), 70),TakeAwayButton.getPreferredSize()));
+		TakeAwayPlaceButton.setBounds(new Rectangle(new Point(width-20-TakeAwayButton.getWidth(), 70),TakeAwayPlaceButton.getPreferredSize()));
+		ShipOrdersButton.setBounds(new Rectangle(new Point(300, 70),ShipOrdersButton.getPreferredSize()));
+		PlaceOrdersButton.setBounds(new Rectangle(new Point(20, 70),PlaceOrdersButton.getPreferredSize()));
+		LoginButton.setBounds(new Rectangle(new Point(width-20-LoginButton.getWidth(), 280),LoginButton.getPreferredSize()));
+		BackDoorButton.setBounds(new Rectangle(new Point(20, height-BackDoorButton.getHeight()-50),BackDoorButton.getPreferredSize()));
+		OpenChashButton.setBounds(new Rectangle(new Point(width-20-OpenChashButton.getWidth(), height-OpenChashButton.getHeight()-50),OpenChashButton.getPreferredSize()));
+		SearchOrderButton.setBounds(new Rectangle(new Point(20, 280),SearchOrderButton.getPreferredSize()));
 		pane.add(TakeAwayPlaceButton);
 		pane.add(TakeAwayButton);
 		pane.add(ShipOrdersButton);

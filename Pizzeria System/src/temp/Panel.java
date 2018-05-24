@@ -1,5 +1,6 @@
 package temp;
 
+import java.awt.Component;
 import java.awt.ComponentOrientation;
 
 import javax.swing.JPanel;

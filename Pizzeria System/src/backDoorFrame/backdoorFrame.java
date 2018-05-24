@@ -1,30 +1,26 @@
 package backDoorFrame;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GraphicsEnvironment;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import temp.Button;
-import temp.Frame;
-import temp.Panel;
+import generalFrame.Contents;
+import generalFrame.activeEmployees;
+import generalFrame.generalButtons;
 
-public class backdoorFrame extends Frame {
+import java.awt.BorderLayout;
+import java.awt.Component;
+
+import temp.BackGroundPanel;
+import temp.DateAndTime;
+import temp.Frame;
+
+public class backdoorFrame {
+	private static Frame frame;
 	public backdoorFrame(){
-		Component contents = new backdoorButtons().createComponents();
-		Panel pane = new Panel();
-		Button returnButton = new Button("/images/backDoorButtons/return.png","/images/backDoorButtons/return2.png");
-    	returnButton.setMnemonic(KeyEvent.VK_I);
-    	returnButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	dispose();
-            }
-        });
-    	returnButton.setBounds(new Rectangle(new Point(20, 520),new Dimension(250,150)));
-    	pane.add(returnButton);
-    	add(pane);
-		addComponent(contents);
+		frame = new Frame();
+		BackGroundPanel background = new BackGroundPanel(new BorderLayout(),"/images/BDbackground.png");
+		backdoorContents generalPanel = new backdoorContents();
+		frame.setContentPane(background);
+		frame.addComponent(new DateAndTime().createComponents());
+    	frame.addComponent(generalPanel);
+	}
+	public static void unVisible(){
+		frame.dispose();
 	}
 }
