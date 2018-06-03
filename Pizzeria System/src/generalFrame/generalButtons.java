@@ -2,34 +2,15 @@ package generalFrame;
 import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.Locale;
-
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.Timer;
-
-import com.mysql.cj.protocol.Protocol.GetProfilerEventHandlerInstanceFunction;
-
 import orderFrame.orderFrame;
 import login.loginFrame;
 import temp.*;
 import backDoorFrame.backDoorManagerPass;
-import backDoorFrame.backdoorFrame;
 public class generalButtons {
 	public Component createComponents() {
 		Panel pane = new Panel();
@@ -39,13 +20,15 @@ public class generalButtons {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int)screenSize.getWidth();
 		int height = (int)screenSize.getHeight();
+//		if(width == 1366 && height == 768){
+//			resolutionChanges.changes();
+//		}
 		Button TakeAwayButton = new Button("/images/generalButtons/TakeAwayButton.png","/images/generalButtons/TakeAwayButton2.png");
 		TakeAwayButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				orderFrame orderframe = new orderFrame();
-				
 			}
 		});
 		Button TakeAwayPlaceButton = new Button("/images/generalButtons/TakeAwayPlace.png","/images/generalButtons/TakeAwayPlace2.png");
@@ -57,7 +40,6 @@ public class generalButtons {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 		Button OpenChashButton = new Button("/images/generalButtons/OpenCash.png","/images/generalButtons/OpenCash2.png");
@@ -87,10 +69,10 @@ public class generalButtons {
 		TakeAwayPlaceButton.setBounds(new Rectangle(new Point(width-20-TakeAwayButton.getWidth(), 70),TakeAwayPlaceButton.getPreferredSize()));
 		ShipOrdersButton.setBounds(new Rectangle(new Point(300, 70),ShipOrdersButton.getPreferredSize()));
 		PlaceOrdersButton.setBounds(new Rectangle(new Point(20, 70),PlaceOrdersButton.getPreferredSize()));
-		LoginButton.setBounds(new Rectangle(new Point(width-20-LoginButton.getWidth(), 280),LoginButton.getPreferredSize()));
+		LoginButton.setBounds(new Rectangle(new Point(width-20-LoginButton.getWidth(), height/2-LoginButton.getHeight()/2),LoginButton.getPreferredSize()));
 		BackDoorButton.setBounds(new Rectangle(new Point(20, height-BackDoorButton.getHeight()-50),BackDoorButton.getPreferredSize()));
 		OpenChashButton.setBounds(new Rectangle(new Point(width-20-OpenChashButton.getWidth(), height-OpenChashButton.getHeight()-50),OpenChashButton.getPreferredSize()));
-		SearchOrderButton.setBounds(new Rectangle(new Point(20, 280),SearchOrderButton.getPreferredSize()));
+		SearchOrderButton.setBounds(new Rectangle(new Point(20, height/2-SearchOrderButton.getHeight()/2),SearchOrderButton.getPreferredSize()));
 		pane.add(TakeAwayPlaceButton);
 		pane.add(TakeAwayButton);
 		pane.add(ShipOrdersButton);

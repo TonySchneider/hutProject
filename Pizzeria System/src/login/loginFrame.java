@@ -29,12 +29,15 @@ import javax.swing.JPasswordField;
 import temp.BackGroundPanel;
 import temp.Button;
 import temp.Panel;
+import temp.backGroundSimplePanel;
 import temp.simpleFrame;
 
 public class loginFrame extends JFrame {
 	private static int someOpen = 0;
 	private static int check = 0;
 	public loginFrame(int x,int y,int weight,int height){
+		backGroundSimplePanel background = new backGroundSimplePanel(new BorderLayout(),"/images/keyBoardNumber.png");
+		setContentPane(background);
 		generalFrame.disable();
 		someOpen++;
 		Panel pane = new Panel();
@@ -174,8 +177,14 @@ public class loginFrame extends JFrame {
 						setVisible(false);
 						check = 0;
 					}
-					else
-						JOptionPane.showMessageDialog(null, "מספר תעודת זהות שגוי.");
+					else{
+//						JOptionPane.showMessageDialog(null, "מספר תעודת זהות שגוי.");
+						JOptionPane optionPane = new JOptionPane();
+						optionPane.setMessage("מספר תעודת זהות שגוי.");
+						JDialog dialog = optionPane.createDialog("שגיאה");
+						dialog.setAlwaysOnTop(true);
+						dialog.setVisible(true);
+					}
 				}catch(Exception e5){
 					JOptionPane.showMessageDialog(null, e5.getMessage());
 				}
@@ -189,14 +198,13 @@ public class loginFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				generalFrame.enable();
 				someOpen = 0;
 				dispose();
 			}
 		});
 		
 		pane.add(exit);
-		BackGroundPanel background = new BackGroundPanel(new BorderLayout(),"/images/keyBoardNumber.png");
-		setContentPane(background);
 		
 		pane.add(submit);
 		pane.add(field);

@@ -1,6 +1,11 @@
 package generalFrame;
 import java.awt.BorderLayout;
+<<<<<<< HEAD
 import java.awt.Component;
+=======
+import java.awt.Component;
+import java.awt.ComponentOrientation;
+>>>>>>> refs/remotes/origin/master
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;

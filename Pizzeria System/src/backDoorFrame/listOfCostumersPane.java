@@ -29,19 +29,14 @@ import temp.TextField;
 import temp.simpleFrame;
 
 import java.sql.*;
-public class listOfEmployeesPane extends Panel {
+public class listOfCostumersPane extends Panel {
 	private Connection myConn;
 	private Statement myStmt = null;
 	private ResultSet myRs = null;
 	private String[] columnNames = {"מספר עובד","שם פרטי","שם משפחה","תעודת זהות","שעות עבודה","תפקיד"};
 	private Object[][] data;
-	public listOfEmployeesPane(){
+	public listOfCostumersPane(){
 		setPreferredSize(new Dimension(1050,542));
-//		setOpaque(true);
-//		JLabel backgroundLists = new JLabel();
-//		backgroundLists.setIcon(new ImageIcon(this.getClass().getResource("/images/backDoorButtons/backgroundLists.png")));
-//		backgroundLists.setBounds(new Rectangle(new Point(300,200), new Dimension(1050,542)));
-//		add(backgroundLists);
 		JTable table = new JTable();
 		DefaultTableModel model = new DefaultTableModel(data, columnNames) {
 		    @Override
@@ -60,10 +55,10 @@ public class listOfEmployeesPane extends Panel {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 		JLabel title = new JLabel();
-		title.setText("רשימת עובדים");
+		title.setText("רשימת לקוחות");
 		title.setFont(new Font("Arial", Font.BOLD, 24));
 		title.setBounds(new Rectangle(new Point(820,10),new Dimension(150,50)));
-		JButton addButton = new JButton("הוסף עובד חדש");
+		JButton addButton = new JButton("הוסף לקוח חדש");
 		addButton.setBounds(new Rectangle(new Point(800, 380),new Dimension(130,35)));
 		addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

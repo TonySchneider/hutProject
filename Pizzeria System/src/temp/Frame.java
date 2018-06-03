@@ -2,6 +2,7 @@ package temp;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
@@ -20,6 +21,7 @@ import javax.swing.Timer;
 public class Frame extends JFrame {
 //		private BackGroundPanel background;
 		public Frame(){
+			setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);  
 			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 			setMaximumSize(new Dimension(dim.width,dim.height));
 			setLayout(null);

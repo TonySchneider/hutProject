@@ -12,4 +12,5 @@ public class TextField extends JTextField {
 		setBounds(new Rectangle(new Point(x, y),new Dimension(weight,height)));
     	setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 	}
+//	public int getWidth(){return getWidth();}
 }	
