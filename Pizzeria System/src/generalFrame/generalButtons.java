@@ -20,13 +20,15 @@ public class generalButtons {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int)screenSize.getWidth();
 		int height = (int)screenSize.getHeight();
+//		if(width == 1366 && height == 768){
+//			resolutionChanges.changes();
+//		}
 		Button TakeAwayButton = new Button("/images/generalButtons/TakeAwayButton.png","/images/generalButtons/TakeAwayButton2.png");
 		TakeAwayButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				orderFrame orderframe = new orderFrame();
-				
 			}
 		});
 		Button TakeAwayPlaceButton = new Button("/images/generalButtons/TakeAwayPlace.png","/images/generalButtons/TakeAwayPlace2.png");
@@ -38,7 +40,6 @@ public class generalButtons {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 		Button OpenChashButton = new Button("/images/generalButtons/OpenCash.png","/images/generalButtons/OpenCash2.png");
